@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="gameContainer">
+      <!-- Overlapping Div -->
+      <div id="overlappingDiv" class="overlappingDiv active"></div>
+
+      <!-- Game Canvas -->
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Main Menu -->
+      <div id="mainMenu" class="ui-menu-container active">
+        <h1>Game</h1>
+
+        <div>
+          <div>a turn-based rouge-lite (wip)</div>
+        </div>
+                <button id="playBtn">Start</button>
+      </div>
+
+      <!-- Pause Menu -->
+       <div id="pauseMenu" class="ui-pause-container">
+        <h1> Paused</h1>
+          <button id="continueBtn">Continue</button>
+          <button id="restartBtn">Restart</button>
+       </div>
+
+      <!-- Health UI -->
+      <div id="ally1ui" class="ui-allyHealth-container">
+        <h1 id="ally1Name">Unit Name</h1>
+        <div class="ui-allyHealth-info-container">
+          <div class="allyHealthBar-grey"></div>
+          <div id="ally1HealthBar-green" class="allyHealthBar-green"></div>
+          <div class="allyHealthBar-value">
+            <p id="ally1Health-current">currHP</p>
+            <p>/</p>
+            <p id="ally1Health-max">maxHP</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mob 1 Health UI -->
+      <div id="mob1ui" class="ui-mobHealth-container-1">
+        <h1 id="mob1Name">Unit Name</h1>
+        <div class="ui-mobHealth-info-container">
+          <div class="mobHealthBar-grey"></div>
+          <div id="mob1HealthBar-green" class="mobHealthBar-green"></div>
+          <div class="mobHealthBar-value">
+            <p id="mob1Health-current">currHP</p>
+            <p>/</p>
+            <p id="mob1Health-max">maxHP</p>
+          </div>
+        </div>
+      </div>
+      <!-- Mob 2 Health UI -->
+      <div id="mob2ui" class="ui-mobHealth-container-2">
+        <h1 id="mob2Name">Unit Name</h1>
+        <div class="ui-mobHealth-info-container">
+          <div class="mobHealthBar-grey"></div>
+          <div id="mob2HealthBar-green" class="mobHealthBar-green"></div>
+          <div class="mobHealthBar-value">
+            <p id="mob2Health-current">currHP</p>
+            <p>/</p>
+            <p id="mob2Health-max">maxHP</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game UI -->
+      <div id="gameUI" class="ui-game-container active">
+        <div id="attacksBox" class="ui-game-attacks"></div>
+        <div id="statsBox" class="ui-game-allyStats"></div>
+      </div>
+      
+      <!-- Dialogue Box -->
+      <div id="dialogueBox" class="dialogue-box"></div>
+      <img id="greenArrowRotating" src="./assets/images/ui/green_arrow_rotating.gif" class="green-arrow-rotating"></img>
+    </div>
+
+    <script type="module">
+      import gsap from "https://cdn.skypack.dev/gsap";
+    </script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

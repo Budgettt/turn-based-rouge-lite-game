@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Press Start 2P", system-ui;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.disable-click-events {
+  pointer-events: none;
+}
+
+.enable-click-events {
+  pointer-events: auto;
+}
+
+/* Overlapping Div */
+.overlappingDiv {
+  z-index: 900;
+  pointer-events: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  display: none;
+}
+.overlappingDiv.active {
+  display: block;
+}
+
+/* Game Canvas */
+#gameContainer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+#gameCanvas {
+  border: 3px solid white;
+  min-height: 100%;
+}
+
+/* Main Menu*/
+.ui-menu-container,
+.ui-pause-container {
+  z-index: 1000;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 3px solid white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px white;
+  display: none;
+}
+.ui-menu-container.active,
+.ui-pause-container.active {
+  display: block;
+}
+.ui-menu-container h1,
+.ui-pause-container h1 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 42px;
+}
+.ui-menu-container button {
+  margin-top: 30px;
+}
+
+/* Pause Menu */
+
+/* Ally Health UI */
+.ui-allyHealth-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 5px white;
+  border: 2px solid white;
+  padding: 15px;
+  border-radius: 10px;
+  height: fit-content;
+  width: fit-content;
+  top: 5%;
+  left: 2.5%;
+  display: none;
+  flex-direction: column;
+}
+.ui-allyHealth-container.active {
+  display: flex;
+}
+.ui-allyHealth-container h1 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.ui-allyHealth-info-container {
+  position: relative;
+}
+.allyHealthBar-grey {
+  background-color: grey;
+  width: 100%;
+  height: 5px;
+  min-width: 200px;
+}
+.allyHealthBar-green {
+  position: absolute;
+  background-color: greenyellow;
+  height: 5px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.allyHealthBar-value {
+  display: flex;
+  position: relative;
+  justify-content: right;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Enemy Health */
+.ui-mobHealth-container-1,
+.ui-mobHealth-container-2 {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 5px white;
+  border: 2px solid white;
+  padding: 15px;
+  border-radius: 10px;
+  height: fit-content;
+  width: fit-content;
+  top: 5%;
+  right: 2.5%;
+  display: none;
+  flex-direction: column;
+}
+.ui-mobHealth-container-2 {
+  top: 20%;
+}
+.ui-mobHealth-container-1.active,
+.ui-mobHealth-container-2.active {
+  display: flex;
+}
+.ui-mobHealth-container-1 h1,
+.ui-mobHealth-container-2 h1 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.ui-mobHealth-info-container {
+  position: relative;
+}
+.mobHealthBar-grey {
+  background-color: grey;
+  width: 100%;
+  height: 5px;
+  min-width: 200px;
+}
+.mobHealthBar-green {
+  position: absolute;
+  background-color: greenyellow;
+  height: 5px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.mobHealthBar-value {
+  display: flex;
+  position: relative;
+  justify-content: right;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Game UI */
+.ui-game-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 3px solid white;
+  padding: 15px;
+  height: 33%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+}
+.ui-game-container.active {
+  display: flex;
+}
+.ui-game-attacks {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: repeat(2, 50%);
+  overflow: hidden;
+  width: 59.5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+  border-radius: 10px;
+}
+.ui-game-attack {
+  display: flex;
+  background-color: grey;
+  justify-content: center;
+  align-items: center;
+}
+.ui-game-allyStats {
+  overflow: hidden;
+  width: 39.5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px solid white;
+  border-radius: 10px;
+  margin-left: 1%;
+}
+
+/* Dialogue Box */
+.dialogue-box {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 3px solid white;
+  backdrop-filter: blur(5px);
+  padding: 48px;
+  height: 33%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.dialogue-box.active {
+  display: flex;
+}
+.green-arrow-rotating {
+  position: absolute;
+  display: none;
+  scale: 0.3;
+  transform: scaleY(-1);
+  bottom: -4%;
+  right: -1%;
+}
+.green-arrow-rotating.active {
+  display: block;
+}
+
+/* Buttons */
+button {
+  background: lightgrey;
+  color: black;
+  border: 2px solid white;
+  padding: 8px 16px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 8px white;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: darkgrey;
+  box-shadow: 0 0 12px white;
+  transform: translateY(-2px);
+}
